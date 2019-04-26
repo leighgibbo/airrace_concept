@@ -1,0 +1,959 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+
+}
+
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+#model_wrapper {
+    min-height: 400px;
+    height: 100%;
+    width: 100%;
+}
+canvas { width: 100%; height: 100% } /* For three.js testing */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    /*font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+	font-family: 'American Typewriter';
+    color: #cccccc; /*#5d5c56;*/
+    font-size: 1em;
+    line-height: 1.4;
+	background: black;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    ALL: Swamp Theme
+   =================== */
+
+.header-container {
+    border-bottom: 20px solid #606344;
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid #606344;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: #434437;
+}
+
+.title {
+    color: white;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: white;
+    background: #606344;
+}
+
+nav a:hover,
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 30px 0;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main aside {
+    color: white;
+    padding: 0px 5% 10px;
+}
+
+.footer-container footer {
+    position: absolute;
+    color: white;
+    padding: 20px 0;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+a {
+	text-decoration: none;
+	color: white;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: rgba(129, 7, 26, 1);
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+/* Header */
+
+.vickers-header {
+	position: relative;
+	z-index: 1000;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	height: 100vh;
+	min-height: 600px;
+	padding: 2em 1em 4em;
+	text-align: center;
+	color: #fff;
+	background: #181922 url(../img/test_header-bg.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.vickers-header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(24, 25, 34, 0.5);
+}
+
+.header-title {
+	position: relative;
+}
+
+.header-title {
+	font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+	font-size: 3em;
+	font-weight: 400;
+	line-height: 1;
+	margin: 0em 0 0.15em 0;
+}
+
+.header-title__part::before,
+.header-title__part::after {
+	content: '\2014';
+	padding: 0 0.5em;
+}
+
+.header-subtitle {
+	font-size: 0.55em;
+	font-weight: normal;
+	display: block;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 0.5em 0 1em;
+	color: #d1d2d2;
+}
+
+.intro {
+	font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+	font-size: 2em;
+	position: relative;
+	z-index: 1000;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	height: 150vh;
+	margin: 0;
+	padding: 3em;
+	text-align: center;
+	color: #fff;
+	background: black;
+}
+
+.intro blockquote {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.intro em {
+	font-size: 1.5em;
+}
+
+.intro span {
+	display: block;
+	padding: 1em 0;
+	color: #464b4b;
+}
+
+/* Content */
+
+.content {
+	padding: 3em 0;
+}
+
+
+/* CINEMATICS LAYER (fixed over the users screen, fades in/out as required) */
+#cinematics {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: #C6D9E8; */
+	/* background: -webkit-linear-gradient(top, #C6D9E8 0%, #fff 100%); */
+    /* height: 400px; */
+    z-index: 99;
+    pointer-events: none;
+}
+.vignette {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    pointer-events: none;
+    box-shadow: 0 0 200px rgba(0,0,0,1) inset;
+}
+.clouds-tilt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* transform-style: preserve-3d; */
+}
+
+.cloud {
+    position: absolute;
+    background-image: url('../img/cloud_1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 338px;
+    transform: translateZ(20px);
+}
+
+#cloud1 {
+    top: 20%;
+    left: 400px;
+    animation: movingclouds 25s linear infinite;
+    transform: translateZ(125px);
+}
+
+#cloud2 {
+    top: 4%;
+    left: 600px;
+    animation: movingclouds 20s linear infinite;
+    transform: translateZ(100px);
+}
+
+#cloud3 {
+    top: 80%;
+    left: 100px;
+	transform: scale(0.9);
+	opacity: 0.9; 
+    animation: movingclouds 23s linear infinite;
+    transform: translateZ(80px);
+}
+
+#cloud4 {
+    top: 30%;
+    left: 40px;
+    transform: scale(0.8);
+	opacity: 0.8; 
+    animation: movingclouds 20s linear infinite;
+    transform: translateZ(60px);
+}
+
+#cloud5 {
+    top: 60%;
+    left: 500px;
+	transform: scale(0.7);
+	opacity: 0.7; 
+    animation: movingclouds 25s linear infinite;
+    transform: translateZ(40px);
+}
+
+#cloud6 {
+    top: 50%;
+    left: 200px;
+	transform: scale(0.5);
+	opacity: 0.5; 
+    animation: movingclouds 27s linear infinite;
+    transform: translateZ(35px);
+}
+
+#cloud7 {
+    top: 90%;
+    left: 700px;
+    transform: scale(0.4);
+	transform: scale(0.4);
+	opacity: 0.4; 
+    animation: movingclouds 29s linear infinite;
+    transform: translateZ(120px);
+}
+
+@keyframes movingclouds {
+	0% {margin-left: 100%;}
+	100% {margin-left: -150%;}
+}
+
+/********* EOF CINEMATICS LAYER **************/
+
+
+
+/* Story */
+
+.journey {
+	position: relative;
+	z-index: 1000;
+	/*padding: 5em 3em;*/
+	padding: 0;
+	background-image: linear-gradient(to right, rgba(0,0,0, 1) , rgba(0,0,0, 0) );
+}
+
+.journey section {
+	font-size: 1.25em;
+	line-height: 1.7;
+	/*min-height: 100vh;*/
+	outline: 0;
+}
+
+.journey section h2 {
+	font-size: 2.7em;
+	font-weight: 400;
+	margin: 0;
+	text-align: center;
+	font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+}
+.journey section:not(:first-child) h2 {
+	padding: 0 0 0 0;
+}
+
+.journey section h2 .title-up {
+	font-size: 1.365em;
+	display: block;
+	text-transform: uppercase;
+	color: #cecec5;
+}
+
+.journey section h2 .frill {
+	max-width: 300px;
+	display: block;
+	margin: 1rem auto 2rem;
+}
+
+.journey section h2 .title-down {
+	font-size: 1.35em;
+	font-weight: 400;
+	line-height: 0.9;
+	display: block;
+	padding: 0.15em 0;
+	color: #5f646c;
+}
+.title-down::before {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 300px;
+    height: 40px;
+    content: " ";
+    background-image: url('../img/frill.svg');
+    background-position: center;
+    background-size: contain;
+}
+.journey section h2 .title-down img {
+    max-width: 100%;
+}
+
+.journey section h2 .title-date {
+	font-size: 2rem;
+}
+
+.journey figure {
+	margin: 1em 0 2em;
+}
+
+.journey figure img {
+	max-width: 100%;
+}
+
+.journey figcaption {
+	font-size: 0.85em;
+	font-style: italic;
+	padding: 1em 1.5em 0;
+	text-align: center;
+	color: #5f646c;
+}
+
+.journey section p {
+	font-size: 0.95em;
+	margin: 0.5em 0 1.5em;
+}
+
+.journey section p.text-intro {
+	font-size: 1.3em;
+	font-style: italic;
+	line-height: 1.5;
+	margin: 0.5em 0 1.25em;
+	text-align: left;
+	color: #9d9c95;
+}
+
+.journey blockquote {
+	font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+	font-size: 2em;
+	line-height: 1.5;
+	position: relative;
+	text-align: left;
+	color: #939997;
+}
+
+.journey blockquote::before {
+	content: '\201C';
+	font-size: 2.5em;
+	font-style: italic;
+	line-height: 1;
+	position: absolute;
+	top: -0.15em;
+	right: 100%;
+	margin: 0 0.075em 0 0;
+	color: #f0f3f3;
+}
+
+.journey blockquote span {
+	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 0.5em;
+	white-space: nowrap;
+	color: #cbcece;
+}
+
+.journey-travel {
+	min-height: 100vh;
+	/*background-color: rgba(73, 18, 18, 0.3) FOR TESTING PURPOSES */
+}
+
+.journey-stop {
+	width: 100%;
+	min-height: 120vh;
+	/*max-width: 900px; /* max-width: 700px; */
+	/* opacity: 1; */
+	/*margin-top: 100vh; /* Sets a huge buffer for the map to settle down */
+	/*margin-left: 1.5em;*/
+	padding: 5em 3em;
+    background-color: #141418;
+}
+.journey-stop .journey-stop__content {
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+.journey-stop__content.fade-in {
+    opacity: 1;
+}
+
+.journey_links {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.journey_links a {
+	display: block;
+	padding: 1rem 2rem;
+	border: 1px solid white;
+}
+
+
+/****** JOURNEY DEFAULTS : ******/
+
+.journey-travel {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.journey-travel .journey-travel__content {
+    width: 200%;
+    /* height: auto; */
+
+    /* transform: scale(1.2); */
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
+
+.journey-travel .journey-travel__content .trail,
+.journey-travel .journey-travel__content .labels {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+}
+.journey-travel .journey-travel__content .flight {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+
+    height: auto;
+}
+.anim-plane-height .flightwrapper {
+    /* animation: planeheight 4s ease-in-out forwards; */
+}
+.journey-travel .journey-travel__content .map {
+    position: relative;
+    /* z-index: 1; */
+    width: 100%;
+}
+/* LABELS: */
+.journey-travel .journey-travel__content .labels text {
+    text-align: right;
+    font-size: 4rem;
+    fill:#ffffff;
+    font-weight: 600;
+    
+    transform-box: fill-box;
+    transform-origin: center;
+    will-change: transform;
+}
+.journey-travel .journey-travel__content .trail .labels text.next-stop {
+    font-size: 3em;
+}
+
+/* ROUTE: */
+.journey-travel .journey-travel__content .trail .flightroute {
+    fill: none;
+    stroke: rgb(229,229,229,0.7);
+    stroke-linecap: round;
+    stroke-width: 30;
+}
+.journey-travel .journey-travel__content .trail .flightprogress {
+    fill: none;
+    stroke: rgb(200,28,31,1);
+    stroke-width: 35;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+
+    will-change: transform;
+    /* See individual journey segments below for animation of path! */
+}
+.journey-travel .journey-travel__content .fixed-stop {
+    fill: rgb(200,28,31,1);
+    stroke: #ffffff;
+    stroke-width: 7;
+}
+.journey-travel .journey-travel__content .next-stop {
+    fill: rgb(200,28,31,1);
+    stroke: #ffffff;
+    stroke-width: 0;
+}
+.journey-travel .journey-travel__content .next-stop.arrived {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: arrived 0.5s ease-in-out forwards;
+}
+
+.journey-travel .journey-travel__content .plane {
+    /* Plane drop-shadow */
+    /* -webkit-filter: drop-shadow( -15px 10px 2px rgba(0, 0, 0, .7)); */
+    /* filter: drop-shadow( -15px 10px 2px rgba(0, 0, 0, .7)); */
+    /* animation: planeshadow 4s linear forwards; */
+}
+.journey-travel .journey-travel__content .plane {
+
+}
+.journey-travel .journey-travel__content .plane .plane-path {
+    display: none;
+}
+.journey-travel .journey-travel__content .plane g.plane-body {
+    width: 90px;
+    height: 90px;
+
+    /* will-change: transform; */
+    /* transform-box: fill-box; */
+    /*transform-origin: center top; /* -- discrepancies here with FF and chrome */
+}
+
+.journey-travel .journey-travel__content .plane g.plane-body > path {
+    display: block;
+    transform-box: fill-box;
+    transform-origin: center;
+    will-change: transform;
+    /* animation: planeheight 4s cubic-bezier(0.5, 0, 0.5, 1) forwards; */
+    animation-play-state: paused;
+}
+
+
+/* Individual Journey Settings: */
+#travel_1 .journey-travel__content {  
+    bottom: unset; /* dymanically overwritten via JS */
+    right: unset; /* dymanically overwritten via JS */
+
+    /* will-change: transform; */
+    animation: journey1_map 3.5s cubic-bezier(0.5, 0, 0.5, 1) forwards;
+    animation-play-state: paused;
+}
+#travel_1 .journey-travel__content .flightprogress {
+    stroke-dasharray: 1250px;
+    stroke-dashoffset: 1250px;
+
+    animation: journey1_path 4s ease-in-out forwards;
+    animation-play-state: paused;
+    /* animation: dash 4s linear forwards; */
+}
+
+
+@keyframes journey1_map {
+  to {
+      bottom: 0;
+      right: -30%;
+  }
+}
+
+@keyframes journey1_path {
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+@keyframes arrived {
+  50% {
+    transform: scale(1.5);
+    stroke-width: 10;
+  }
+  100% {
+    transform: scale(1.2);
+    stroke-width: 7;
+  }
+}
+
+@keyframes planeshadow {
+  0% {
+    -webkit-filter: drop-shadow( -15px 10px 2px rgba(0, 0, 0, .7));
+    filter: drop-shadow( -15px 10px 2px rgba(0, 0, 0, .7));
+  }
+  30% {
+    -webkit-filter: drop-shadow( -80px 80px 15px rgba(0, 0, 0, .5));
+    filter: drop-shadow( -80px 80px 15px rgba(0, 0, 0, .5));
+  }
+  70% {
+    -webkit-filter: drop-shadow( -80px 80px 15px rgba(0, 0, 0, .5));
+    filter: drop-shadow( -80px 80px 15px rgba(0, 0, 0, .5));
+  }
+  100% {
+    -webkit-filter: drop-shadow( -15px 10px 2px rgba(0, 0, 0, .7));
+    filter: drop-shadow( -15px 10px 2px rgba(0, 0, 0, .7));
+  }
+}
+
+/* @keyframes planeheight {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.6);
+  }
+  70% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+@keyframes planeheight {
+  0% {
+    transform: translateZ(0px);
+  }
+  30% {
+    transform: translateZ(120px);
+  }
+  70% {
+    transform: translateZ(120px);
+  }
+  100% {
+    transform: translateZ(0px);
+  }
+}
+
+
+@media(max-width: 720px) {
+    #travel_1 .journey-travel__content {
+
+    }
+}
+
+@media(max-width: 720px) {
+	.header-title {
+		font-size: 1.5em;
+	}
+	.intro {
+		font-size: 1.25em;
+		height: auto;
+		padding: 1em;
+	}
+	.journey {
+		font-size: 0.85em;
+		/* padding: 2em; */
+		text-align: justify;
+	}
+	.journey section h2 {
+		font-size: 1.85em;
+	}
+	.journey blockquote {
+		font-size: 1.45em;
+	}
+	.journey-stop {
+		width: 100%;
+		max-width: none;
+	}
+}
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ==============
+    INTERMEDIATE:
+   ============== */
+
+}
+
+@media only screen and (min-width: 768px) {
+
+/* ======
+    WIDE:
+   ====== */
+   #travel_1 .journey-travel__content {
+       width:150%;
+   }
+
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
