@@ -32,6 +32,7 @@ $(function () { // wait for document ready
 	const tilt = document.querySelector('.this-tilts');
 	VanillaTilt.init(tilt,{
 		max: 5,
+		// scale: 1.025,
 		reset: false 
 	});
 	

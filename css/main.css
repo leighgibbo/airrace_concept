@@ -1,3 +1,6 @@
+/* Adobe fontset: */
+@import url("https://use.typekit.net/qby4wns.css");
+
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
 *,
 *:after,
@@ -71,7 +74,7 @@ textarea {
 body {
     /*font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
     height: 100%;
-	font-family: 'American Typewriter';
+	font-family: 'itc-american-typewriter';
     color: #cccccc; /*#5d5c56;*/
     font-size: 1em;
     line-height: 1.4;
@@ -610,7 +613,7 @@ a:focus {
     font-size: 4rem;
     fill:#ffffff;
     font-weight: 600;
-    font-family: 'American Typewriter', 'Courier New', Courier, serif;
+    font-family: 'itc-american-typewriter', 'Courier New', Courier, serif;
     
     transform-box: fill-box;
     transform-origin: center;
