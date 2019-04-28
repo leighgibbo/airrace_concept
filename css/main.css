@@ -612,7 +612,10 @@ a:focus {
     text-align: right;
     font-size: 4rem;
     fill:#ffffff;
-    font-weight: 600;
+    /* font-weight: 600; --too bold when using adobe font, so need to reset to normal and fake it with a stroke */
+    font-weight: normal;
+    stroke: #ffffff;
+    stroke-width: 2px;
     font-family: 'itc-american-typewriter', 'Courier New', Courier, serif;
     
     transform-box: fill-box;
