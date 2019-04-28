@@ -577,7 +577,7 @@ a:focus {
 }
 .journey-travel .journey-travel__content {
     width: 200%;
-    /* height: auto; */
+    height: auto;
 
     /* transform: scale(1.2); */
     transform-style: preserve-3d;
