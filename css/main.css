@@ -7,7 +7,7 @@
 }
 
 html {
-
+    height: 100%;
 }
 
 
@@ -70,6 +70,7 @@ textarea {
 
 body {
     /*font-family: 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    height: 100%;
 	font-family: 'American Typewriter';
     color: #cccccc; /*#5d5c56;*/
     font-size: 1em;
@@ -206,7 +207,7 @@ a:focus {
 	justify-content: center;
 	-webkit-align-items: center;
 	align-items: center;
-	height: 100vh;
+	height: 100%;
 	min-height: 600px;
 	padding: 2em 1em 4em;
 	text-align: center;
@@ -266,7 +267,7 @@ a:focus {
 	justify-content: center;
 	-webkit-align-items: center;
 	align-items: center;
-	height: 150vh;
+	height: 150%;
 	margin: 0;
 	padding: 3em;
 	text-align: center;
