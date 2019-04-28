@@ -609,6 +609,7 @@ a:focus {
     font-size: 4rem;
     fill:#ffffff;
     font-weight: 600;
+    font-family: 'American Typewriter', 'Courier New', Courier, monospace;
     
     transform-box: fill-box;
     transform-origin: center;
