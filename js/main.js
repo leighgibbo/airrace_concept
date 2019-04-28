@@ -61,6 +61,9 @@ $(function () { // wait for document ready
 	});
 	/* ********* */
 
+	/* Journey div heights set up for mobile jump fix: */
+	$('.journey-travel').css({ height: window.innerHeight });
+
 	/*  FLIGHT JOURNEY LOGIC:  */
 
 	var $journeys = $('.journey-travel');
