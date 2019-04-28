@@ -629,13 +629,13 @@ a:focus {
 /* ROUTE: */
 .journey-travel .journey-travel__content .trail .flightroute {
     fill: none;
-    stroke: rgb(229,229,229,0.7);
+    stroke: rgba(229,229,229,0.7);
     stroke-linecap: round;
     stroke-width: 30;
 }
 .journey-travel .journey-travel__content .trail .flightprogress {
     fill: none;
-    stroke: rgb(200,28,31,1);
+    stroke: rgba(200,28,31,1);
     stroke-width: 35;
     stroke-miterlimit: 10;
     stroke-linecap: round;
@@ -646,12 +646,12 @@ a:focus {
     /* See individual journey segments below for animation of path! */
 }
 .journey-travel .journey-travel__content .fixed-stop {
-    fill: rgb(200,28,31,1);
+    fill: rgba(200,28,31,1);
     stroke: #ffffff;
     stroke-width: 7;
 }
 .journey-travel .journey-travel__content .next-stop {
-    fill: rgb(200,28,31,1);
+    fill: rgba(200,28,31,1);
     stroke: #ffffff;
     stroke-width: 0;
 }
