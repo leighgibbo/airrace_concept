@@ -592,6 +592,9 @@ a:focus {
     width: 100%;
     height: auto;
 }
+.journey-travel .journey-travel__content .trail::before {
+    display: block;
+}
 .journey-travel .journey-travel__content .flight {
     position: absolute;
     z-index: 3;
@@ -606,6 +609,9 @@ a:focus {
     position: relative;
     /* z-index: 1; */
     width: 100%;
+}
+.journey-travel .journey-travel__content .map::after {
+    display: block;
 }
 /* LABELS: */
 .journey-travel .journey-travel__content .labels text {
