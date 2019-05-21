@@ -33,7 +33,7 @@ $(function () { // wait for document ready
 	VanillaTilt.init(tilt,{
 		max: 5,
 		// scale: 1.025,
-		reset: false 
+		reset: true 
 	});
 	
 	// $('.this-tilts').tilt({
@@ -142,7 +142,7 @@ $(function () { // wait for document ready
 		}
 		scale_increment = (max_scale - min_scale) / 100
 		scale = Math.max(min_scale, (min_scale + (scale_increment * scale_percentage)))
-		console.log(percentage + '%', scale_percentage)
+		// console.log(percentage + '%', scale_percentage)
 		return scale
 	}
 
