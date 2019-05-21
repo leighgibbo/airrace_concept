@@ -29,12 +29,12 @@ $(function () { // wait for document ready
 
 
 	/* TiltJS */
-	const tilt = document.querySelector('.this-tilts');
-	VanillaTilt.init(tilt,{
-		max: 5,
-		// scale: 1.025,
-		reset: true 
-	});
+	// const tilt = document.querySelector('.this-tilts');
+	// VanillaTilt.init(tilt,{
+	// 	max: 5,
+	// 	// scale: 1.025,
+	// 	reset: true 
+	// });
 	
 	// $('.this-tilts').tilt({
 	// 	maxTilt: 10,
