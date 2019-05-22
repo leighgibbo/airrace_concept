@@ -413,7 +413,7 @@ a:focus {
 	z-index: 1000;
 	/*padding: 5em 3em;*/
 	padding: 0;
-	background-image: linear-gradient(to right, rgba(0,0,0, 1) , rgba(0,0,0, 0) );
+	/* background-image: linear-gradient(to right, rgba(0,0,0, 1) , rgba(0,0,0, 0) ); */
 }
 
 .journey section {
@@ -533,7 +533,6 @@ a:focus {
 
 .journey-travel {
 	min-height: 100%;
-	/*background-color: rgba(73, 18, 18, 0.3) FOR TESTING PURPOSES */
 }
 
 .journey-stop {
@@ -582,6 +581,18 @@ a:focus {
     /* transform: scale(1.2); */
     transform-style: preserve-3d;
     position: absolute;
+}
+.journey-travel .test {
+    width: 200%;
+    height: auto;
+    background-color: rgba(200,28,31,0.6);
+    bottom: unset;
+    right: unset;
+
+    /* transform: scale(1.2); */
+    transform-style: preserve-3d;
+    position: absolute;
+    z-index: 99;
 }
 
 
@@ -695,6 +706,7 @@ a:focus {
     will-change: transform;
     /* animation: planeheight 4s cubic-bezier(0.5, 0, 0.5, 1) forwards; */
     animation-play-state: paused;
+    -webkit-animation-play-state:paused;
 }
 
 
@@ -706,6 +718,7 @@ a:focus {
     /* will-change: transform; */
     animation: journey1_map 3.5s cubic-bezier(0.5, 0, 0.5, 1) forwards;
     animation-play-state: paused;
+    -webkit-animation-play-state:paused;
 }
 #travel_1 .journey-travel__content .flightprogress {
     stroke-dasharray: 1250px;
@@ -713,6 +726,7 @@ a:focus {
 
     animation: journey1_path 4s ease-in-out forwards;
     animation-play-state: paused;
+    -webkit-animation-play-state:paused;
     /* animation: dash 4s linear forwards; */
 }
 
