@@ -352,7 +352,6 @@ a:focus {
     top: 20%;
     left: 400px;
     animation: movingclouds 25s linear infinite;
-    transform: translateZ(425px);
     opacity: 0.8;
 }
 
