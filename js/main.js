@@ -27,6 +27,14 @@ $(function () { // wait for document ready
 	// })
 	.addTo(controller);
 
+	function lockOrientation(orientation) {
+		console.log("locking orientaiton..");
+		if ("orientation" in screen) {
+			screen.orientation.lock(orientation);
+			console.log("screen is: " + screen.orientation.type);
+		}
+	}
+
 	/* Fullscreen video trigger */
 	function openFullscreen(video_element) {
 		console.log("opening vid")
@@ -35,17 +43,16 @@ $(function () { // wait for document ready
 		if (elem.paused) {
 			if (elem.requestFullscreen) {
 				elem.requestFullscreen();
+				lockOrientation("landscape");
 			} else if (elem.mozRequestFullScreen) { /* Firefox */
 				elem.mozRequestFullScreen();
+				lockOrientation("landscape");
 			} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
 				elem.webkitRequestFullscreen();
+				lockOrientation("landscape");
 			} else if (elem.msRequestFullscreen) { /* IE/Edge */
 				elem.msRequestFullscreen();
-			}
-
-			if ("orientation" in screen) {
-				screen.orientation.lock("landscape");
-				console.log("screen is: " + screen.orientation.type);
+				lockOrientation("landscape");
 			}
 			elem.play();
 		} else {
