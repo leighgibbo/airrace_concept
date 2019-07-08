@@ -20,6 +20,9 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div id="rotation_alert">
+            <p>Please rotate your device back to portrait to continue the journey.</p>
+        </div>
 
         <div class="main-container">
             <header class="vickers-header">
@@ -69,7 +72,7 @@
                     </div>
 
                 </section>
-                <section id="travel_1" class="journey-travel" data-pscale-sm="0.5" data-pscale-lg="1.5">
+                <section id="travel_1" class="journey-travel travel-map" data-pscale-sm="0.5" data-pscale-lg="1.5">
 
                     <div class="vignette"></div>
                     
@@ -195,8 +198,13 @@
                         <div class="journey_links"><a href="#stop_1">Previous Day</a><a href="#stop_3">Next Day</a></div>
                     </div>
                 </section>
-                <section id="travel_2" class="journey-travel" data-pscale-sm="0.5" data-pscale-lg="1.5">
-            
+                <section id="travel_2" class="journey-travel travel-video">
+                    <img class="poster" src="/img/video_poster_play.svg"/>
+                    <video>
+                        <source src="/video/demo.webm" type="video/webm">
+                        <source src="/video/demo.mp4" type="video/mp4">
+                        Sorry, your browser doesn't support embedded videos.
+                    </video>
                 </section>
                 <section id="stop_3" class="journey-stop">
                     <div class="journey-stop__content">
@@ -228,7 +236,7 @@
                         <div class="journey_links"><a href="#stop_2">Previous Day</a><a href="#stop_4">Next Day</a></div>
                     </div>
                 </section>
-                <section class="journey-travel" data-zoom-start="10">
+                <section id="travel_3" class="journey-travel" data-zoom-start="10">
                     
                 </section>
 
@@ -269,7 +277,7 @@
                     </div>
                 
                 </section>
-                <section id="travel_4" class="journey-travel" data-pscale-sm="0.5" data-pscale-lg="1.5">
+                <section id="travel_4" class="journey-travel travel-map" data-pscale-sm="0.5" data-pscale-lg="1.5">
                 
                     <div class="vignette"></div>
                 
@@ -437,7 +445,7 @@
                     </div>
                 
                 </section>
-                <section id="travel_5" class="journey-travel" data-pscale-sm="0.5" data-pscale-lg="1.5">
+                <section id="travel_5" class="journey-travel travel-map" data-pscale-sm="0.5" data-pscale-lg="1.5">
                 
                     <div class="vignette"></div>
                 
@@ -605,7 +613,7 @@
                     </div>
                 
                 </section>
-                <section id="travel_6" class="journey-travel" data-pscale-sm="0.5" data-pscale-lg="1.5">
+                <section id="travel_6" class="journey-travel travel-map" data-pscale-sm="0.5" data-pscale-lg="1.5">
                 
                     <div class="vignette"></div>
                 
@@ -773,7 +781,7 @@
                     </div>
                 
                 </section>
-                <section id="travel_7" class="journey-travel" data-pscale-sm="0.5" data-pscale-lg="1.5">
+                <section id="travel_7" class="journey-travel travel-map" data-pscale-sm="0.5" data-pscale-lg="1.5">
                 
                     <div class="vignette"></div>
                 

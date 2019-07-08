@@ -27,6 +27,32 @@ $(function () { // wait for document ready
 	// })
 	.addTo(controller);
 
+	/* Fullscreen video trigger */
+	function openFullscreen(video_element) {
+		console.log("opening vid")
+		var elem = video_element
+		console.log(elem)
+		if (elem.paused) {
+			if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			} else if (elem.mozRequestFullScreen) { /* Firefox */
+				elem.mozRequestFullScreen();
+			} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+				elem.webkitRequestFullscreen();
+			} else if (elem.msRequestFullscreen) { /* IE/Edge */
+				elem.msRequestFullscreen();
+			}
+
+			if ("orientation" in screen) {
+				screen.orientation.lock("landscape");
+				console.log("screen is: " + screen.orientation.type);
+			}
+			elem.play();
+		} else {
+			elem.pause();
+		}
+	}
+
 
 	/* TiltJS */
 	const tilt = document.querySelector('.this-tilts');
@@ -63,14 +89,25 @@ $(function () { // wait for document ready
 	/* ********* */
 
 	/* Journey div heights set up for mobile jump fix: */
-	$('.journey-travel').css({ height: window.innerHeight });
+	$('.journey-travel.travel-map').css({ height: window.innerHeight });
 
-	/*  FLIGHT JOURNEY LOGIC:  */
+	var $journey_videos = $('.journey-travel.travel-video');
+	$journey_videos.each(function(i){
+		console.log(i)
+		var myVideo = $("video", i)[0];
+		var poster = $(myVideo).siblings(".poster");
+		// console.log(poster);
+		poster.on("click", function() {
+			console.log("poster clicked")
+			openFullscreen(myVideo);
+		})
+	});
 
-	var $journeys = $('.journey-travel');
+	/*  FLIGHT MAP-JOURNEY LOGIC:  */
+	var $map_journeys = $('.journey-travel.travel-map');
 	var $flight_paths = $('.flightprogress.animated');
 
-	$journeys.each(function(i) {
+	$map_journeys.each(function(i) {
 		if(i < 1) i = 1
 
 		// $plane_scale_sm = $(this).data('pscale-sm')
