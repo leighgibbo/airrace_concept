@@ -29,9 +29,15 @@ $(function () { // wait for document ready
 
 	function lockOrientation(orientation) {
 		console.log("locking orientaiton..");
-		if ("orientation" in screen) {
-			screen.orientation.lock(orientation);
-			console.log("screen is: " + screen.orientation.type);
+		if ("orientation" in window.screen) {
+			var lockFunction = window.screen.orientation.lock;
+
+			if (lockFunction.call(window.screen.orientation, orientation)) {
+				console.log('Orientation locked in: ' + orientation)
+			} else {
+				console.error('There was a problem in locking the orientation')
+			}
+			console.log("screen is: " + window.screen.orientation.type);
 		}
 	}
 
