@@ -324,7 +324,7 @@ a:focus {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 888;
+    z-index: 20;
     pointer-events: none;
     box-shadow: 0 0 200px rgba(0,0,0,1) inset;
 }
@@ -366,7 +366,7 @@ a:focus {
     top: 80%;
     left: 100px;
 	transform: scale(0.9);
-	opacity: 0.9; 
+	opacity: 0.9;
     animation: movingclouds 23s linear infinite;
     transform: translateZ(80px);
 }
@@ -375,7 +375,7 @@ a:focus {
     top: 30%;
     left: 40px;
     transform: scale(0.8);
-	opacity: 0.8; 
+	opacity: 0.8;
     animation: movingclouds 20s linear infinite;
     transform: translateZ(60px);
 }
@@ -384,7 +384,7 @@ a:focus {
     top: 60%;
     left: 500px;
 	transform: scale(0.7);
-	opacity: 0.7; 
+	opacity: 0.7;
     animation: movingclouds 25s linear infinite;
     transform: translateZ(40px);
 }
@@ -393,7 +393,7 @@ a:focus {
     top: 50%;
     left: 200px;
 	transform: scale(0.5);
-	opacity: 0.5; 
+	opacity: 0.5;
     animation: movingclouds 27s linear infinite;
     transform: translateZ(35px);
 }
@@ -403,7 +403,7 @@ a:focus {
     left: 700px;
     transform: scale(0.4);
 	transform: scale(0.4);
-	opacity: 0.4; 
+	opacity: 0.4;
     animation: movingclouds 29s linear infinite;
     transform: translateZ(120px);
 }
@@ -586,25 +586,57 @@ a:focus {
     position: relative;
     overflow: hidden;
 }
-.journey-travel .journey-travel__content {
-    width: 200%;
-    height: auto;
 
-    /* transform: scale(1.2); */
-    transform-style: preserve-3d;
+.journey-travel .pilot {
+    display: flex;
     position: absolute;
+    z-index: 25;
+    width: 100%;
+    height: 130px;
+    bottom: 0;
 }
-.journey-travel .test {
+
+.journey-travel .pilot .head {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    background-image: url('../img/pilot_head.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.journey-travel .pilot .speech {
+    width: 100%;
+    height: 70%;
+    padding: 1rem 1rem 1rem 20%;
+    margin: 2rem 1rem 1rem 10%;
+    border: 2px solid #d8e0dc;
+    background-color: #4f473a;
+    color:  #d8e0dc;
+    border-radius: 3px;
+    text-align: center;
+}
+.journey-travel .pilot .speech p {
+    margin: 0;
+}
+.journey-travel .pilot .speech .map_launch {
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+}
+.journey-travel .pilot .speech .map_launch:hover {
+    cursor: pointer;
+}
+
+
+.journey-travel .travel-map__content {
     width: 200%;
     height: auto;
-    background-color: rgba(200,28,31,0.6);
-    bottom: unset;
-    right: unset;
 
     /* transform: scale(1.2); */
     transform-style: preserve-3d;
     position: absolute;
-    z-index: 99;
 }
 
 .travel-video {
@@ -622,17 +654,17 @@ a:focus {
 }
 
 
-.journey-travel .journey-travel__content .trail,
-.journey-travel .journey-travel__content .labels {
+.journey-travel .travel-map__content .trail,
+.journey-travel .travel-map__content .labels {
     position: absolute;
     z-index: 3;
     width: 100%;
     height: auto;
 }
-.journey-travel .journey-travel__content .trail::before {
+.journey-travel .travel-map__content .trail::before {
     display: block;
 }
-.journey-travel .journey-travel__content .flight {
+.journey-travel .travel-map__content .flight {
     position: absolute;
     z-index: 3;
     width: 100%;
@@ -642,16 +674,16 @@ a:focus {
 .anim-plane-height .flightwrapper {
     /* animation: planeheight 4s ease-in-out forwards; */
 }
-.journey-travel .journey-travel__content .map {
+.journey-travel .travel-map__content .map {
     position: relative;
     /* z-index: 1; */
     width: 100%;
 }
-.journey-travel .journey-travel__content .map::after {
+.journey-travel .travel-map__content .map::after {
     display: block;
 }
 /* LABELS: */
-.journey-travel .journey-travel__content .labels text {
+.journey-travel .travel-map__content .labels text {
     text-align: right;
     font-size: 4rem;
     fill:#ffffff;
@@ -660,23 +692,23 @@ a:focus {
     stroke: #ffffff;
     stroke-width: 2px;
     font-family: 'itc-american-typewriter', 'Courier New', Courier, serif;
-    
+
     transform-box: fill-box;
     transform-origin: center;
     will-change: transform;
 }
-.journey-travel .journey-travel__content .trail .labels text.next-stop {
+.journey-travel .travel-map__content .trail .labels text.next-stop {
     font-size: 3em;
 }
 
 /* ROUTE: */
-.journey-travel .journey-travel__content .trail .flightroute {
+.journey-travel .travel-map__content .trail .flightroute {
     fill: none;
     stroke: rgba(229,229,229,0.7);
     stroke-linecap: round;
     stroke-width: 30;
 }
-.journey-travel .journey-travel__content .trail .flightprogress {
+.journey-travel .travel-map__content .trail .flightprogress {
     fill: none;
     stroke: rgba(200,28,31,1);
     stroke-width: 35;
@@ -688,35 +720,35 @@ a:focus {
     will-change: transform;
     /* See individual journey segments below for animation of path! */
 }
-.journey-travel .journey-travel__content .fixed-stop {
+.journey-travel .travel-map__content .fixed-stop {
     fill: rgba(200,28,31,1);
     stroke: #ffffff;
     stroke-width: 7;
 }
-.journey-travel .journey-travel__content .next-stop {
+.journey-travel .travel-map__content .next-stop {
     fill: rgba(200,28,31,1);
     stroke: #ffffff;
     stroke-width: 0;
 }
-.journey-travel .journey-travel__content .next-stop.arrived {
+.journey-travel .travel-map__content .next-stop.arrived {
     transform-box: fill-box;
     transform-origin: center;
     animation: arrived 0.5s ease-in-out forwards;
 }
 
-.journey-travel .journey-travel__content .plane {
+.journey-travel .travel-map__content .plane {
     /* Plane drop-shadow */
     /* -webkit-filter: drop-shadow( -15px 10px 2px rgba(0, 0, 0, .7)); */
     /* filter: drop-shadow( -15px 10px 2px rgba(0, 0, 0, .7)); */
     /* animation: planeshadow 4s linear forwards; */
 }
-.journey-travel .journey-travel__content .plane {
+.journey-travel .travel-map__content .plane {
 
 }
-.journey-travel .journey-travel__content .plane .plane-path {
+.journey-travel .travel-map__content .plane .plane-path {
     display: none;
 }
-.journey-travel .journey-travel__content .plane g.plane-body {
+.journey-travel .travel-map__content .plane g.plane-body {
     width: 90px;
     height: 90px;
 
@@ -725,7 +757,7 @@ a:focus {
     /*transform-origin: center top; /* -- discrepancies here with FF and chrome */
 }
 
-.journey-travel .journey-travel__content .plane g.plane-body > path {
+.journey-travel .travel-map__content .plane g.plane-body > path {
     display: block;
     transform-box: fill-box;
     transform-origin: center;
@@ -737,7 +769,7 @@ a:focus {
 
 
 /* Individual Journey Settings: */
-#travel_1 .journey-travel__content {  
+#travel_1 .travel-map__content {
     bottom: unset; /* dymanically overwritten via JS */
     right: unset; /* dymanically overwritten via JS */
 
@@ -746,7 +778,7 @@ a:focus {
     animation-play-state: paused;
     -webkit-animation-play-state:paused;
 }
-#travel_1 .journey-travel__content .flightprogress {
+#travel_1 .travel-map__content .flightprogress {
     stroke-dasharray: 1250px;
     stroke-dashoffset: 1250px;
 
@@ -829,9 +861,55 @@ a:focus {
   }
 }
 
+/* Animate.css animations: */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+.animated.delay-1s {
+  animation-delay: 1s;
+}
+
+.animated.delay-2s {
+  animation-delay: 2s;
+}
+
+.animated.delay-3s {
+  animation-delay: 3s;
+}
+
+.animated.delay-4s {
+  animation-delay: 4s;
+}
+
+.animated.delay-5s {
+  animation-delay: 5s;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+}
+
 
 @media(max-width: 720px) {
-    #travel_1 .journey-travel__content {
+    #travel_1 .travel-map__content {
 
     }
 }
@@ -888,7 +966,7 @@ a:focus {
 /* ======
     WIDE:
    ====== */
-   #travel_1 .journey-travel__content {
+   #travel_1 .travel-map__content {
        width:150%;
    }
 

@@ -72,9 +72,9 @@ $(function () { // wait for document ready
 	VanillaTilt.init(tilt,{
 		max: 5,
 		// scale: 1.025,
-		reset: true 
+		reset: true
 	});
-	
+
 	// $('.this-tilts').tilt({
 	// 	maxTilt: 10,
 	// 	perspective: 1000,   // Transform perspective, the lower the more extreme the tilt gets.
@@ -90,12 +90,12 @@ $(function () { // wait for document ready
 
 
 	/* Window Panning calculations - TODO: functionize */
-	var initial_offset_bottom = $('#travel_1 .journey-travel__content').innerHeight() - window.innerHeight;
-	var initial_offset_right = $('#travel_1 .journey-travel__content').innerWidth() - window.innerWidth;
+	var initial_offset_bottom = $('#travel_1 .travel-map__content').innerHeight() - window.innerHeight;
+	var initial_offset_right = $('#travel_1 .travel-map__content').innerWidth() - window.innerWidth;
 		var iob = (initial_offset_bottom > 0) ? "-" + initial_offset_bottom + "px" : initial_offset_bottom + "px";
 		var ior = (initial_offset_right > 0) ? "-" + initial_offset_right + "px" : initial_offset_right + "px";
 
-	$('#travel_1 .journey-travel__content').css({
+	$('#travel_1 .travel-map__content').css({
 		bottom: iob,
 		right: ior
 	});
@@ -144,9 +144,14 @@ $(function () { // wait for document ready
 					's' + $plane_scale_sm
 			});
 
-			$(this).bind({
-				click: function () {
-					to_animate = $(this).find('.journey-travel__content, .journey-travel__content .flightprogress, .plane journey-travel__content g.plane-body > path');
+			var the_map = $(this);
+			var the_pilot = the_map.children(".pilot");
+			var pilotTransition = 300;
+
+			animateMap = function(map) {
+				setTimeout(function(){
+					console.log('animating map');
+					to_animate = $(map).find('.travel-map__content, .travel-map__content .flightprogress, .plane travel-map__content g.plane-body > path');
 					to_animate.css("animation-play-state", "running");
 					to_animate.addClass('anim-plane-height')
 
@@ -159,17 +164,27 @@ $(function () { // wait for document ready
 								's' + scalePlane(lenPath, val, $plane_scale_sm, $plane_scale_lg)
 						});
 					}, 4000, mina.easeinout)
-				}
-			});
+				}, pilotTransition)
+			}
+
+			closePilot = function(pilot) {
+				$(pilot).fadeOut(pilotTransition);
+			}
+
+
+			$(this).on("click", ".map_launch", function() {
+				closePilot(the_pilot);
+				animateMap(the_map);
+			})
 
 		}
-		
+
 		i++;
 	})
 
 	$flight_paths.each(function() {
 		//console.log($(this));
-		$(this).bind({ 
+		$(this).bind({
 			animationend: function() {
 				city_marker = $(this).siblings('.next-stop');
 				city_marker.addClass('arrived');
